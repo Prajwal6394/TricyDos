@@ -20,10 +20,12 @@ export default function Todo({
     }
   };
 
+  const isComplete = todo.complete;
+
   return (
     <div className="todo"> 
       <input
-        style={{ textDecoration: todo.completed && "line-through" }}
+        style={{ textDecoration: isComplete ? "line-through" : "none"}}
         type="text"
         value={todo.title === "" ? newTitle : todo.title}
         className="list"
